@@ -1,0 +1,11 @@
+{
+  "name": "habiflow",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client && cp -n server/.env.example server/.env && cp -n client/.env.example client/.env",
+    "dev": "concurrently -n server,client -c green,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
